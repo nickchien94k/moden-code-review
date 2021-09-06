@@ -21,7 +21,7 @@ int main(){
 	char player1 = 'X';
 	char player2 = 'O';
 	bool turn = true; // false for player 1's turn, true for player 2's turn. Player 1 first.
-	cout << "X = Player 1" << endl << "O = Player 2" << endl;
+	cout << "X = Player 1 " << endl << "O = Player 2 " << endl;
        for (int n=0; n<9; n++){
 			turn = !turn;  // use the not-operator to change true to false or false to true.
 		    if (turn == false)
@@ -30,6 +30,7 @@ int main(){
 				cout << "Player 2: ";
 			cout << "Which cell to mark? i:[1..3], j:[1..3]: "; 
 			cin >> i >> j;
+	       		// do while to check the input is number
 			if (turn == false)
 			   game[i][j] = 'X';
 			else 
