@@ -14,7 +14,7 @@ bool isWin(char game[3][3]){
 	if (game[0][2] == game[1][1] && game[1][1] == game[2][0] && (game[0][2] == 'X' || game[0][2] == 'O')) win = true;
 	return win;
 }
-
+// patch 2
 int main(){
 	int i, j;
 	char game[3][3] = {' '}; // Tic-tac-toe
