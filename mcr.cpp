@@ -1,4 +1,6 @@
 #include <iostream>
+#include <cctype>
+
 using namespace std;
 bool isWin(char game[3][3]){
 	bool win = false;
@@ -16,6 +18,7 @@ bool isWin(char game[3][3]){
 }
 
 int main(){
+	string inp = " ";
 	int i, j;
 	char game[3][3] = {' '}; // Tic-tac-toe
 	char player1 = 'X';
@@ -28,8 +31,18 @@ int main(){
 				cout << "Player 1: ";
 			else
 				cout << "Player 2: ";
-			cout << "Which cell to mark? i:[1..3], j:[1..3]: "; 
-			cin >> i >> j;
+	       
+	       		do {
+				cout << "Which cell to mark? i:[1..3]"; 
+				cin >> inp;
+			} while (!isdigit(inp[0]));
+			do {
+				cout << "Which cell to mark? j:[1..3]"; 
+				cin >> inp;
+			} while (!isdigit(inp[0]));
+	       
+	       , j:[1..3]:
+	       
 	       		// do while to check the input is number
 			if (turn == false)
 			   game[i][j] = 'X';
@@ -39,6 +52,12 @@ int main(){
 				cout << "Win!" << endl;
 				break; // need to terminate the problem
 			}
+	       	// show the game to console
+	cout << game[0][0] << " " << game[0][1] << " " << game[0][2] << endl;
+	cout << game[1][0] << " " << game[1][1] << " " << game[1][2] << endl;
+	cout << game[2][0] << " " << game[2][1] << " " << game[2][2] << endl;
+	       
+	      
 		}
 	if (i==3) // all celles with i=0 to 2 have been inputted above but no winner yet
 	   cout << "Tie!" << endl;
